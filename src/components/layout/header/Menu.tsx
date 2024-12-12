@@ -3,7 +3,7 @@ import { Menu as MenuWrap, MenuButton, MenuList, MenuItem, IconButton, Button, A
 import { AddIcon, EditIcon, ExternalLinkIcon, HamburgerIcon, RepeatIcon } from '@chakra-ui/icons';
 import { ChevronDownIcon } from 'lucide-react';
 
-const MenuHam = () => {
+const Menu = () => {
     return (
         <MenuWrap>
             <MenuButton as={Button} rightIcon={<ChevronDownIcon size={14} />} variant='ghost'>
@@ -11,14 +11,14 @@ const MenuHam = () => {
                 <Avatar size='sm' name='Kent Dodds' src='https://bit.ly/kent-c-dodds' />
             </MenuButton>
             <MenuList>
-                <MenuItem>Download</MenuItem>
-                <MenuItem>Create a Copy</MenuItem>
-                <MenuItem>Mark as Draft</MenuItem>
-                <MenuItem>Delete</MenuItem>
-                <MenuItem>Attend a Workshop</MenuItem>
+                <MenuItem>맥도날드</MenuItem>
+                <MenuItem>버거킹</MenuItem>
+                <MenuItem>쉑쉑버거</MenuItem>
+                <MenuItem>파이브가이즈</MenuItem>
+                <MenuItem>파파이스</MenuItem>
             </MenuList>
         </MenuWrap>
     );
 };
 
-export default MenuHam;
+export default Menu;

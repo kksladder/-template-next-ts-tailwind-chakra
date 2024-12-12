@@ -4,6 +4,7 @@ import './globals.css';
 
 import { ChakraProvider, extendTheme, ThemeConfig } from '@chakra-ui/react';
 import Header from '@/components/layout/header/Header';
+import { Wrap } from '@/components/layout/Container';
 
 // 테마 설정
 const config: ThemeConfig = {
@@ -45,11 +46,11 @@ export default function RootLayout({
         <html lang='ko'>
             <body>
                 <ChakraProvider>
-                    <div id='wrap'>
+                    <Wrap>
                         <Header />
                         <main>{children}</main>
                         <footer>푸터</footer>
-                    </div>
+                    </Wrap>
                 </ChakraProvider>
             </body>
         </html>
