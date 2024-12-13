@@ -7,6 +7,9 @@ import { Flex, Menu, MenuButton, MenuDivider, MenuItem, MenuList, Spacer } from 
 import { ChevronDownIcon, EllipsisVerticalIcon } from 'lucide-react';
 import Link from 'next/link';
 
+import restaurantsBlogPosts from '@/data/restaurant-blog-posts.json';
+import { MockBlogPosts } from '@/data/restaurant-blog-posts';
+
 const menuItems = [
     { label: '오늘', onClick: () => (window.location.href = '/feed') },
     { label: '이번주', onClick: () => console.log('이번주 clicked') },
@@ -19,6 +22,7 @@ const settingMenuItems = [
     { label: '태그 목록', onClick: () => (window.location.href = '/tag') },
     { label: '서비스 정책', onClick: () => (window.location.href = '/service') },
 ];
+
 export default function Home() {
     return (
         <Container>
@@ -42,8 +46,11 @@ export default function Home() {
                     <CustomMenu buttonText={<EllipsisVerticalIcon />} items={settingMenuItems} variant='ghost' />
                 </div>
             </Flex>
-            <BlogPost isCard />
-            <BlogPost />
+
+            {/* 매핑된 데이터 렌더링 */}
+            {MockBlogPosts.map((post) => (
+                <BlogPost key={post.id} isCard data={post} />
+            ))}
         </Container>
     );
 }
